@@ -1,0 +1,36 @@
+---
+title: "Map of OCS"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(tidyverse)
+library(magrittr)
+library(ggmap)
+library(leaflet)
+load('city_coordinates.rda')
+```
+
+```{r bubblemap, include=FALSE}
+# Create a color palette with handmade bins.
+mybins <- c(1, 5, 10, 50, 100, 1000, 2000)
+mypalette <- colorBin(palette="Reds", domain = cities$sessions,
+                      na.color="transparent", bins=mybins)
+
+# Final Map
+m <- leaflet(cities) %>% 
+  addTiles()  %>% 
+  setView(lat = 0, lng = 0, zoom = 1) %>%
+  addProviderTiles(providers$CartoDB.Positron) %>%
+  addCircleMarkers(~longitude, ~latitude, 
+    fillColor = ~mypalette(sessions), fillOpacity = 0.7, radius= ~sqrt(sessions), stroke=FALSE
+  ) %>%
+  addLegend(pal=mypalette, values=~sessions, opacity=0.9, title = "Sessions", position = "topright" )
+```
+
+```{r m, echo=FALSE}
+m
+```
+

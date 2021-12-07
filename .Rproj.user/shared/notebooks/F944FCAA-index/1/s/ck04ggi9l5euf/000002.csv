@@ -1,0 +1,61 @@
+"0","ocs_property_id = 256923228"
+"0","cities = ga_data(ocs_property_id,"
+"0","          date_range = c(""2021-01-01"", ""yesterday""),"
+"0","          metrics = c(""sessions""),"
+"0","          dimensions = c(""country"", ""city""), limit = 1000)"
+"2","[36mℹ[39m [38;5;249m[38;5;249m2021-12-07 04:24:33 >[38;5;249m[39m Setting client.id from options(googleAuthR.client_id)
+"
+"2","The [34mgoogleAuthR[39m package is requesting access to your Google
+account.
+"
+"2","Select a pre-authorised account or enter '0' to obtain a
+new token.
+"
+"2","Press Esc/Ctrl + C to cancel.
+"
+"1",""
+"1","
+"
+"1","1: mbreshock@gmail.com"
+"1","
+"
+"1",""
+"1","
+"
+"0","1"
+"2","Auto-refreshing stale OAuth token.
+"
+"2","[36mℹ[39m [38;5;249m[38;5;249m2021-12-07 04:24:39 >[38;5;249m[39m Downloaded [ 775 ] of total [ 775 ] rows
+"
+"0","cities %<>% mutate("
+"0","  latitude = geocode(paste(city, country, sep = "", ""))$lat,"
+"0","  longitude = geocode(paste(city, country, sep = "", ""))$lon"
+"0",")"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Baltimore,+United+States&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Seattle,+United+States&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Hyderabad,+India&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Gothenburg,+Sweden&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=(not+set),+India&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Washington,+United+States&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=San+Diego,+United+States&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Lutherville-Timonium,+United+States&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=(not+set),+Hong+Kong&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Durham,+United+States&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Austin,+United+States&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Chicago,+United+States&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=(not+set),+Peru&key=xxx
+"
+"2","Source : https://maps.googleapis.com/maps/api/geocode/json?address=Randburg,+South+Africa&key=xxx
+"
